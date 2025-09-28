@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants } from 'motion/react';
 
 import { allProjects } from 'contentlayer/generated';
 import { Container, Wrapper, Title, Grid } from './Projects.styled';

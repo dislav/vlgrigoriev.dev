@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Variants } from 'framer-motion';
+import { Variants } from 'motion/react';
 
 import { Github, Telegram } from '@/shared/icons';
 import {

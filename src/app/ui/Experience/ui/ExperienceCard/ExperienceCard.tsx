@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import { format, parseISO } from 'date-fns';
 
 import { Job } from 'contentlayer/generated';
 import { WithClassName } from '@/shared/types';
@@ -38,8 +38,10 @@ export default function ExperienceCard({
                 </Info>
             </Content>
             <Dates>
-                {dayjs(startDate).format('YYYY')} —{' '}
-                {endDate ? dayjs(endDate).format('YYYY') : 'Настоящее время'}
+                {format(parseISO(startDate), 'yyyy')} —{' '}
+                {endDate
+                    ? format(parseISO(endDate), 'yyyy')
+                    : 'Настоящее время'}
             </Dates>
         </Container>
     );

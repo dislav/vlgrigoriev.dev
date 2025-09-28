@@ -3,7 +3,7 @@ import {
     animate,
     AnimationPlaybackControls,
     ValueAnimationTransition,
-} from 'framer-motion';
+} from 'motion/react';
 
 interface UseScrollToProps {
     offset?: (() => number) | number;

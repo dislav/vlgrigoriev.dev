@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
+import { Variants } from 'motion/react';
 
 import { allJobs } from 'contentlayer/generated';
 import { Container, Wrapper, Title, List, Item } from './Experience.styled';

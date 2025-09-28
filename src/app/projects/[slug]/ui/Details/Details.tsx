@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import dayjs from 'dayjs';
+import { format, parseISO } from 'date-fns';
 import Balancer, { Provider } from 'react-wrap-balancer';
 
 import { Project } from 'contentlayer/generated';
@@ -38,7 +38,7 @@ export default function Details({
                 <ContentWrapper>
                     <Provider>
                         <Subtitle>
-                            {dayjs(publishAt).format('YYYY')}
+                            {format(parseISO(publishAt), 'yyyy')}
                             {tags?.length ? ` • ${tags.join(', ')}` : ''}
                         </Subtitle>
                         <Title>

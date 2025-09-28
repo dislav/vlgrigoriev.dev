@@ -1,4 +1,4 @@
-import { AnimatePresence, Transition } from 'framer-motion';
+import { AnimatePresence, Transition } from 'motion/react';
 
 import { WithClassName } from '@/shared/types';
 import { Container, Wrapper } from './MobileMenu.styled';

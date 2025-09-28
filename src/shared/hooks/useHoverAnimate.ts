@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react';
-import { ValueAnimationTransition, useAnimate } from 'framer-motion';
+import { ValueAnimationTransition, useAnimate } from 'motion/react';
 
 interface UsePointProps {
     transitionMove?: ValueAnimationTransition;

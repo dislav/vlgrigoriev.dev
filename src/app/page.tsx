@@ -1,4 +1,4 @@
-import { Transition } from 'framer-motion';
+import { Transition } from 'motion/react';
 
 import MotionConfig from '@/app/motion-config';
 

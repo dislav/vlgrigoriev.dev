@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import dayjs from 'dayjs';
+import { format, parseISO } from 'date-fns';
 
 import { Project } from 'contentlayer/generated';
 import { Container, Preview, Content, Title, Year } from './ProjectCard.styled';
@@ -20,17 +20,11 @@ export default function ProjectCard({
         <Link className={className} href={`/${_raw.flattenedPath}`}>
             <Container initial="initial" whileHover="scale">
                 <Preview>
-                    <Image
-                        src={image}
-                        alt={title}
-                        width={560}
-                        height={560}
-                        quality={95}
-                    />
+                    <Image src={image} alt={title} width={560} height={560} />
                 </Preview>
                 <Content>
                     <Title>{title}</Title>
-                    <Year>{dayjs(publishAt).format('YYYY')}</Year>
+                    <Year>{format(parseISO(publishAt), 'yyyy')}</Year>
                 </Content>
             </Container>
         </Link>

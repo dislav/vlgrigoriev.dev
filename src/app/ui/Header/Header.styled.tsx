@@ -1,7 +1,7 @@
 'use client';
 
 import styled, { css } from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { rgba } from 'polished';
 
 import { Breakpoint, up } from '@/shared/styles';

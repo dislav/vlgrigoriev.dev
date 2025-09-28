@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Transition } from 'framer-motion';
+import { Transition } from 'motion/react';
 
 import MotionConfig from '@/app/motion-config';
 import { allProjects } from 'contentlayer/generated';
@@ -8,9 +8,7 @@ import { Container, Wrapper, Mdx } from './page.styled';
 import { Details } from './ui';
 
 interface ParamsProps {
-    params: {
-        slug: string;
-    };
+    params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -20,7 +18,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({
     params,
 }: ParamsProps): Promise<Metadata> {
-    const project = allProjects.find((project) => project.slug === params.slug);
+    const { slug } = await params;
+    const project = allProjects.find((project) => project.slug === slug);
+
     if (!project) return notFound();
 
     return {
@@ -34,8 +34,10 @@ export async function generateMetadata({
     };
 }
 
-export default function Page({ params }: ParamsProps) {
-    const project = allProjects.find((project) => project.slug === params.slug);
+export default async function Page({ params }: ParamsProps) {
+    const { slug } = await params;
+    const project = allProjects.find((project) => project.slug === slug);
+
     if (!project) return notFound();
 
     const transition: Transition = {

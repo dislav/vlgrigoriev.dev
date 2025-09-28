@@ -7,7 +7,7 @@ import {
     Transition,
     useMotionValueEvent,
     useScroll,
-} from 'framer-motion';
+} from 'motion/react';
 import { useTheme } from 'styled-components';
 import { rgba } from 'polished';
 

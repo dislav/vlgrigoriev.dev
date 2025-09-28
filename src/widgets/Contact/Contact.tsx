@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { useMotionValueEvent, useScroll } from 'framer-motion';
+import { useMotionValueEvent, useScroll } from 'motion/react';
 import Image from 'next/image';
 
 import { useHoverAnimate, useToggleable } from '@/shared/hooks';
